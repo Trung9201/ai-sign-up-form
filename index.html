@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-up Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <img src="./odin-lined.png" alt="" />
+        <h1>-----ODIN-----</h1>
+      </div>
+      <form action="" id="form-signin">
+        <h2>Email Sign Up Form</h2>
+        <div>
+          <label for="name">Enter name: </label><br />
+          <input type="text" class="input" required name="name" id="name" />
+        </div>
+        <div>
+          <label for="email">Enter email: </label><br />
+          <input type="email" class="input" required name="email" id="email" />
+        </div>
+        <div>
+          <label for="password">Enter Password: </label><br />
+          <input
+            type="password"
+            class="input"
+            required
+            name="password"
+            id="password"
+          />
+        </div>
+        <div>
+          <label for="cpassword">Confirm Password: </label><br />
+          <input
+            type="password"
+            class="input"
+            required
+            name="cpassword"
+            id="cpassword"
+          />
+        </div>
+        <div>
+          <input type="checkbox" name="checkbox" id="" required />
+          <label for="checkbox"
+            >I agree with Term and Conditions and the Privacy Policy</label
+          >
+        </div>
+        <br />
+        <button class="sign-up">Sign up</button>
+      </form>
+    </div>
+
+    <script>
+      const password = document.getElementById("password"),
+        confirm_password = document.getElementById("cpassword");
+
+      function validatePassword() {
+        if (password.value != confirm_password.value) {
+          confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+          confirm_password.setCustomValidity("");
+        }
+      }
+
+      password.onchange = validatePassword;
+      confirm_password.onkeyup = validatePassword;
+    </script>
+  </body>
+</html>
